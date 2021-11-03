@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <body>
   <main>
-   <p id="notice">Welcome! You have signed up successfuly.</p>
+   
     <div class="container px-5 px-sm-0">
      <div class="row">
       <div class="col-md-3">
@@ -40,9 +40,15 @@
         <h2>Book detail</h2>
          <table class="table">
           <tbody>
-           <tr>
-            <td></td>
-           </tr>
+           
+            <tr>
+             <td><%= image_tag("no_image.jpg") %></td>
+             <td><%= @book.title %></td>
+             <td><%= @book.body %></t>
+             <td><%= link_to "Edit", edit_book_path(@book) %></td>
+             <td><%= link_to "Destroy", book_path(@book), method: :delete %></td>
+            </tr>
+           
           </tbody>
          </table>
        </div>
