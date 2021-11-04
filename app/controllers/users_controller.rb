@@ -10,9 +10,13 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    @book = Book.new
   end
 
   def show
+    @user = User.find(params[:id])
+    @books = @user.books
   end
 
   def destroy
@@ -21,7 +25,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:title, :body, :image)
+    params.require(:user).permit(:name, :introduction, :plofile_image)
   end
 
 end
